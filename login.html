@@ -1,40 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>ARAKADATA LOGIN</title>
-<style>
-body{ background:black; color:#00ff88; font-family:monospace; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
-.box{ border:2px solid #00ff88; padding:40px; text-align:center; box-shadow:0 0 20px #00ff88; width:300px; }
-input{ width:90%; padding:10px; margin:10px 0; background:black; border:1px solid #00ff88; color:white; }
-button{ width:95%; padding:10px; background:#00ff88; color:black; border:none; font-weight:bold; cursor:pointer; }
-button:hover{ background:white; }
-#msg{ color:red; }
-</style>
-</head>
-<body>
-<div class="box">
-<h1>ARAKADATA</h1>
-<p>by: kurt pogi</p>
-<input id="user" placeholder="Username">
-<input id="pass" type="password" placeholder="Password">
-<button onclick="login()">LOG IN</button>
-<p id="msg"></p>
-</div>
-
+<body style="background:black;color:#00ff88;font-family:monospace;text-align:center;padding-top:100px;">
+<h1>ARAKADATA LOGIN</h1>
+<input id="u" placeholder="Username"><br><br>
+<input id="p" type="password" placeholder="Password"><br><br>
+<button onclick="log()">LOGIN</button>
+<p id="m"></p>
 <script>
-function login(){
- let u = document.getElementById('user').value;
- let p = document.getElementById('pass').value;
-
- if(u=="kurt pogi" && p=="Hulaanmo"){
-   document.getElementById('msg').style.color="#00ff88";
-   document.getElementById('msg').innerHTML="Login success! Welcome kurt pogi!";
-   setTimeout(function(){
-     window.location.href="https://arakadata.github.io";
-   }, 1000);
- } else {
-   document.getElementById('msg').innerHTML="Mali username o password!";
- }
+function log(){
+var user=document.getElementById('u').value;
+var pass=document.getElementById('p').value;
+if(user=='kurt pogi' && pass=='Hulaanmo'){
+document.getElementById('m').innerHTML='Success! Welcome!';
+window.location.href='https://arakadata.github.io';
+}else{
+document.getElementById('m').innerHTML='Mali!';
+}
 }
 </script>
 </body>
