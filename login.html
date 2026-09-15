@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login - ARAKADATA</title>
+<title>ARAKADATA LOGIN</title>
 <style>
 body{ background:black; color:#00ff88; font-family:monospace; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
-.box{ border:1px solid #00ff88; padding:40px; box-shadow:0 0 20px #00ff88; text-align:center; width:300px; }
-h1{ text-shadow:0 0 10px #00ff88; }
+.box{ border:2px solid #00ff88; padding:40px; text-align:center; box-shadow:0 0 20px #00ff88; width:300px; }
 input{ width:90%; padding:10px; margin:10px 0; background:black; border:1px solid #00ff88; color:white; }
-button{ width:95%; padding:10px; background:#00ff88; color:black; border:none; font-weight:bold; cursor:pointer; margin-top:10px; }
+button{ width:95%; padding:10px; background:#00ff88; color:black; border:none; font-weight:bold; cursor:pointer; }
 button:hover{ background:white; }
-p{ color:white; font-size:12px; }
+#msg{ color:red; }
 </style>
 </head>
 <body>
 <div class="box">
 <h1>ARAKADATA</h1>
 <p>by: kurt pogi</p>
-<input type="text" id="user" placeholder="Username">
-<input type="password" id="pass" placeholder="Password">
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
 <button onclick="login()">LOG IN</button>
 <p id="msg"></p>
 </div>
@@ -26,14 +25,15 @@ p{ color:white; font-size:12px; }
 function login(){
  let u = document.getElementById('user').value;
  let p = document.getElementById('pass').value;
- 
- // Dito mo palitan username at password
- if(u=="kurt" && p=="pogi123"){
-   document.getElementById('msg').innerHTML="Login success! Welcome kurt!";
-   window.location.href="https://arakadata.github.io"; // lipat sa main site
+
+ if(u=="kurt pogi" && p=="Hulaanmo"){
+   document.getElementById('msg').style.color="#00ff88";
+   document.getElementById('msg').innerHTML="Login success! Welcome kurt pogi!";
+   setTimeout(function(){
+     window.location.href="https://arakadata.github.io";
+   }, 1000);
  } else {
    document.getElementById('msg').innerHTML="Mali username o password!";
-   document.getElementById('msg').style.color="red";
  }
 }
 </script>
